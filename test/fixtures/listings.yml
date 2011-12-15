@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+
+two:
+  title: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+
+ruby:
+ title: Math Tutor
+ description: Tutor for Geometry, Algebra, and Calculus in Albuquerque, NM. 5+ years of experience.
+ image_url: math.jpg
+ price: 30.00

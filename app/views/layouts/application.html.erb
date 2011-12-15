@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutors-4-Ur-Kids</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body id="store">
+
+	<div id="banner">
+		<%= image_tag("logo.png", :class=>"logo") %>
+		<%= image_tag("banner.png", :class=>"banner") %>
+	</div>
+
+	<div id="columns">
+		<div id="side">
+			<% if @cart %>
+				<%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
+					<%= render @cart %>
+				<% end %>
+			<% end %>
+			<a href="/">Home</a><br />
+			<a href="/contact">Contact</a><br />
+			<a href="/faq">FAQ</a><br />
+			
+			<% if session[:user_id] %>
+				<br />
+				<%= link_to 'Orders', orders_path %><br />
+				<%= link_to 'Listings', listings_path %><br />
+				<%= link_to 'Users', users_path %><br />
+				<br />
+				<%= button_to 'Logout', logout_path, :method => :delete %>
+			<% end %>
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
+
+</body>
+</html>

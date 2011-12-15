@@ -1,0 +1,33 @@
+<div id="listing_list">
+	<h1>Listings</h1>
+	
+	<table>
+		<% @listings.each do |listing| %>
+			<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+			
+				<td>
+				<%= image_tag(listing.image_url, :class => 'list_image') %>
+				</td>
+				
+				<td class="list_description">
+					<dl>
+					<dt><%= listing.title %></dt>
+					<dd><%= truncate(strip_tags(listing.description), :length => 80) %></dd>
+					</dl>
+				</td>
+				
+				<td class="list_actions">
+					<%= link_to 'Show', listing %><br/>
+					<%= link_to 'Edit', edit_listing_path(listing) %><br/>
+					<%= link_to 'Destroy', listing, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+				
+			</tr>
+		<% end %>
+	</table>
+	
+</div>
+
+<br />
+
+<%= link_to 'New listing', new_listing_path %>

@@ -1,0 +1,17 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Tutors-4-Ur-Kids</h1>
+
+<% @listings.each do |listing| %>
+	<div class="entry">
+		<%= image_tag(listing.image_url) %>
+		<h3><%= listing.title %></h3>
+		<%=sanitize listing.description %>
+		<div class="price_line">
+			<span class="price" ><%= number_to_currency(listing.price) %></span>
+			<%= button_to 'Add to Cart', line_items_path(:listing_id => listing), :remote => true %>
+		</div>
+	</div>
+<% end %>

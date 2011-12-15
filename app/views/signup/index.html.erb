@@ -1,0 +1,42 @@
+<div class="depot_form">
+
+<fieldset>
+<legend>Tutors Signup</legend>
+
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<%= form_tag do %>
+	
+	<div>
+		<%= label :signup, :name, "Name:" %>
+		<%= text_field :signup, :name, :size => 40 %>
+	</div>
+
+	<div>
+		<%= label :signup, :address, "Address:" %>
+		<%= text_area :signup, :address, :rows => 3, :cols => 40 %>
+	</div>
+	
+	<div>
+		<%= label :signup, :phone_number, "Phone #:" %>
+		<%= telephone_field :signup, :phone_number, :size => 40 %>
+	</div>
+	
+	<div>
+		<%= label :signup, :email, "E-Mail:" %>
+		<%= email_field :signup, :email, :size => 40 %>
+	</div>
+	
+	<div>
+		<%= label :signup, :description, "Desc:" %>
+		<%= text_area :signup, :description, :rows => 10, :cols => 80 %>
+	</div>
+
+	<%= submit_tag( "Submit" ) %>
+
+<% end %>
+
+</fieldset>
+</div>

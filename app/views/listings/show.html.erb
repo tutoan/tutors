@@ -1,0 +1,27 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <b>Title:</b>
+  <%= @listing.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @listing.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @listing.image_url %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @listing.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
