@@ -1,4 +1,5 @@
 class SignupController < ApplicationController
+	skip_before_filter :authorize
 	
   def create
 		@signup = Signup.new(params[:signup])
